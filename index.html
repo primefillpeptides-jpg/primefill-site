@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrimeFill Peptides</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-pink-200 via-white to-blue-200 text-gray-900 p-8 text-center">
+    <h1 class="text-4xl font-bold mb-2">PrimeFill Peptides</h1>
+    <p class="text-lg">Small-batch, pre-filled peptide pens & sprays for wellness, recovery, and beauty.</p>
+  </header>
+
+  <!-- PRODUCT GRID -->
+  <main>
+    <section class="p-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-white text-gray-900 p-6 rounded-xl shadow">
+        <h2 class="font-bold text-xl mb-2">Glow Stack</h2>
+        <p>BPC-157, TB-500, GHK-Cu blend for skin, healing, anti-aging.</p>
+      </div>
+      <div class="bg-white text-gray-900 p-6 rounded-xl shadow">
+        <h2 class="font-bold text-xl mb-2">Tirzepatide Pens</h2>
+        <p>Weight management support.</p>
+      </div>
+      <div class="bg-white text-gray-900 p-6 rounded-xl shadow">
+        <h2 class="font-bold text-xl mb-2">Tesamorelin</h2>
+        <p>Belly fat reduction support.</p>
+      </div>
+      <div class="bg-white text-gray-900 p-6 rounded-xl shadow">
+        <h2 class="font-bold text-xl mb-2">Sermorelin</h2>
+        <p>Growth hormone stimulation.</p>
+      </div>
+      <div class="bg-white text-gray-900 p-6 rounded-xl shadow">
+        <h2 class="font-bold text-xl mb-2">NAD+ 500 mg</h2>
+        <p>Cellular energy & longevity.</p>
+      </div>
+      <div class="bg-white text-gray-900 p-6 rounded-xl shadow">
+        <h2 class="font-bold text-xl mb-2">Lipo-B</h2>
+        <p>Metabolic support.</p>
+      </div>
+    </section>
+
+    <!-- WHY PRIMEFILL -->
+    <section class="bg-gray-800 p-8">
+      <h2 class="text-2xl font-bold mb-4">Why PrimeFill?</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Pre-filled, ready-to-use pens & sprays</li>
+        <li>Custom protocols and guidance included</li>
+        <li>Cute, aesthetic packaging</li>
+        <li>Educational content via Discord</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="p-8">
+      <h2 class="text-2xl font-bold mb-4">FAQ</h2>
+      <p class="mb-2"><strong>Q:</strong> How do I order?</p>
+      <p class="mb-4"><strong>A:</strong> Complete the compliance checklist below to unlock the order form.</p>
+    </section>
+
+    <!-- COMPLIANCE CHECKLIST & FORM -->
+    <section class="bg-gray-100 text-gray-900 p-8">
+      <h2 class="text-xl font-bold mb-4">Compliance Checklist</h2>
+      <form id="complianceForm" class="mb-4">
+        <label class="block mb-2">
+          <input type="checkbox" id="check1" class="mr-2" /> I confirm I am over 18 and understand peptides are for research use only.
+        </label>
+        <label class="block mb-4">
+          <input type="checkbox" id="check2" class="mr-2" /> I have read and agree to the terms & conditions.
+        </label>
+      </form>
+      <div id="formContainer" class="hidden">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeTsCoDW20JmB3y6L6CbXxAs2OqA5bXOeKrRtH9beu_VI7QmA/viewform?embedded=true"
+          width="100%"
+          height="1100"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0">Loading…
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white text-center p-6">
+    <p>Contact: <a href="mailto:Primefillpeptides@gmail.com" class="underline">Primefillpeptides@gmail.com</a></p>
+    <p><a href="https://discord.gg/7GHfMFdRmE" target="_blank" class="underline">Join us on Discord</a></p>
+    <p class="text-sm mt-2">© <span id="year"></span> PrimeFill Peptides</p>
+  </footer>
+
+  <script>
+    // Update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Show form only when both checkboxes are ticked
+    const check1 = document.getElementById('check1');
+    const check2 = document.getElementById('check2');
+    const formContainer = document.getElementById('formContainer');
+    document.getElementById('complianceForm').addEventListener('change', () => {
+      formContainer.classList.toggle('hidden', !(check1.checked && check2.checked));
+    });
+  </script>
+</body>
+</html>
